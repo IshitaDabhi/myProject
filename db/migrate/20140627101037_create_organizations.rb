@@ -5,9 +5,9 @@ class CreateOrganizations < ActiveRecord::Migration
       t.text :code
       t.text :description
       t.string :billing_type
-      t.string :start_date
+      t.date :start_date
       t.string :dead_date
-      t.string :end_date
+      t.date :end_date
       t.string :git_url
       t.string :status
 

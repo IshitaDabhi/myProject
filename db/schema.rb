@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627102748) do
+ActiveRecord::Schema.define(version: 20140627101037) do
 
   create_table "organizations", force: true do |t|
     t.string   "name"
     t.text     "code"
     t.text     "description"
     t.string   "billing_type"
-    t.datetime "start_date",   limit: 255
+    t.date     "start_date"
     t.string   "dead_date"
-    t.string   "end_date"
+    t.date     "end_date"
     t.string   "git_url"
     t.string   "status"
     t.datetime "created_at"
