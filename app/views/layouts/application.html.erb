@@ -10,12 +10,12 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          <%= link_to "sample app", '#', id: "logo" %>
+          <%= link_to "Project Tracking", '/static_pages/home', id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "Home",    '#' %></li>
-              <li><%= link_to "Help",    '#' %></li>
-              <li><%= link_to "Sign in", '#' %></li>
+              <li><%= link_to "Home",    '/static_pages/home' %></li>
+              <li><%= link_to "Project List",    '/organizations' %></li>
+              
             </ul>
           </nav>
         </div>
@@ -26,4 +26,16 @@
 </div>
 
 </body>
+<footer class="footer">
+  <small>
+    <a href="http://railstutorial.org/">Rails Tutorial</a>
+    by Michael Hartl
+  </small>
+  <nav>
+    <ul>
+      <li><%= link_to "Contact", '/static_pages/ContactUs' %></li>
+    </li>
+    </ul>
+  </nav>
+</footer>
 </html>

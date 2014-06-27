@@ -25,7 +25,8 @@
   </div>
   <div class="field">
     <%= f.label :billing_type %><br>
-    <%= f.text_field :billing_type %>
+    <%= f.select :billing_type, options_for_select([["tnm", "tnm"], ["fixed", "fixed"]]) %>
+    
   </div>
   <div class="field">
     <%= f.label :start_date %><br>
@@ -45,7 +46,7 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+   <%= f.select :status, options_for_select([["POC", "POC"],["Kick-off", "Kick-off"], ["completed", "completed"]]) %>
   </div>
   <div class="actions">
     <%= f.submit %>
