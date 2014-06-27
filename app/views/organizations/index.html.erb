@@ -1,0 +1,43 @@
+<h1>Listing organizations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Billing type</th>
+      <th>Start date</th>
+      <th>Dead date</th>
+      <th>End date</th>
+      <th>Git url</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @organizations.each do |organization| %>
+      <tr>
+        <td><%= organization.name %></td>
+        <td><%= organization.code %></td>
+        <td><%= organization.description %></td>
+        <td><%= organization.billing_type %></td>
+        <td><%= organization.start_date %></td>
+        <td><%= organization.dead_date %></td>
+        <td><%= organization.end_date %></td>
+        <td><%= organization.git_url %></td>
+        <td><%= organization.status %></td>
+        <td><%= link_to 'Show', organization %></td>
+        <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
+        <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Organization', new_organization_path %>
