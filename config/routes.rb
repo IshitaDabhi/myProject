@@ -1,4 +1,5 @@
 MyProject::Application.routes.draw do
+  root '/static_pages/home'
   get "static_pages/ContactUs"
   #get "static_pages/Contact"
   #get "static_pages/Us"
