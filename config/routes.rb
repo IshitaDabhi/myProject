@@ -1,10 +1,12 @@
 MyProject::Application.routes.draw do
+  resources :projects
+
   root to:"static_pages#home"
   get "static_pages/ContactUs"
   #get "static_pages/Contact"
   #get "static_pages/Us"
   get "static_pages/home"
-  resources :organizations
+  #resources :organizations
 
   # get "oragizations/home"
   # The priority is based upon order of creation: first created -> highest priority.

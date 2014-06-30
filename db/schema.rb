@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627101037) do
+ActiveRecord::Schema.define(version: 20140630062819) do
 
   create_table "organizations", force: true do |t|
     t.string   "name"
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 20140627101037) do
     t.string   "billing_type"
     t.date     "start_date"
     t.string   "dead_date"
+    t.date     "end_date"
+    t.string   "git_url"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.text     "code"
+    t.text     "description"
+    t.string   "billing_type"
+    t.date     "start_date"
+    t.date     "deadline_date"
     t.date     "end_date"
     t.string   "git_url"
     t.string   "status"
