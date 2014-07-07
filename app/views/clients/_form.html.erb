@@ -1,0 +1,25 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ClientName %><br>
+    <%= f.text_field :ClientName %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.select :country, options_for_select([["India", "India"],["U.S.A", "U.S.A"], ["Argentina", "Argentina"],["U.A.E","U.A.E"],["China","China"],["France","France"],["Germany","Germany"]]) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

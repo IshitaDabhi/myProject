@@ -1,4 +1,6 @@
 MyProject::Application.routes.draw do
+  resources :clients
+
   resources :projects
 
   root to:"static_pages#home"
@@ -6,6 +8,7 @@ MyProject::Application.routes.draw do
   #get "static_pages/Contact"
   #get "static_pages/Us"
   get "static_pages/home"
+  
   #resources :organizations
 
   # get "oragizations/home"
