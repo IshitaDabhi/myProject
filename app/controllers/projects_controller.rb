@@ -1,12 +1,16 @@
+
 class ProjectsController < ApplicationController
+   require 'will_paginate/array';
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.paginate(page: params[:page], :per_page => 5)
+   # @projects = Project.paginate(page: params[:page], :per_page => 5)
+    @projects = Project.search(params[:search],params[:status],params[:clientId]).paginate(page: params[:page], :per_page => 5)
   end
-
+  # GET /search
+  
   # GET /projects/1
   # GET /projects/1.json
   def show
@@ -69,6 +73,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :code, :description, :billing_type, :start_date, :deadline_date, :end_date, :git_url, :status)
+      params.require(:project).permit(:name, :code, :description, :billing_type, :start_date, :deadline_date, :end_date, :git_url, :status, :client_id)
     end
 end

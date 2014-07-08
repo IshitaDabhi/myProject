@@ -8,7 +8,7 @@ MyProject::Application.routes.draw do
   #get "static_pages/Contact"
   #get "static_pages/Us"
   get "static_pages/home"
-  
+ # get "/search"
   #resources :organizations
 
   # get "oragizations/home"
