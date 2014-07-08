@@ -1,6 +1,6 @@
 <h1>Listing projects</h1>
 <%= will_paginate %>
-<table>
+<table border="1" style="width:900px">
   <thead>
     <tr>
       <th>Name</th>
@@ -12,9 +12,9 @@
       <th>End date</th>
       <th>Git url</th>
       <th>Status</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Client</th>
+      <th>Actions</th>
+     
     </tr>
   </thead>
 
@@ -28,11 +28,13 @@
         <td><%= project.start_date %></td>
         <td><%= project.deadline_date %></td>
         <td><%= project.end_date %></td>
+
         <td><%= project.git_url %></td>
         <td><%= project.status %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= Client.find_by_id(project.client_id).ClientName %></td>
+        <td><%= link_to 'Show', project %> |
+        <%= link_to 'Edit', edit_project_path(project) %> |
+        <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
