@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+	default_scope -> { order('deadline_date DESC')}
 	validates :name, presence: true, length: { maximum: 50 }
 	belongs_to :client 
 	validates :billing_type, presence: true
